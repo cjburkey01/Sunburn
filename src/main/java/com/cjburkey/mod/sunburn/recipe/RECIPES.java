@@ -11,11 +11,15 @@ public class RECIPES {
 	
 	public RECIPES() {
 		addShapeless(new ItemStack(ITEMS.itemSunscreen, 1), new Object[] {
-			new ItemStack(Items.slime_ball, 1), new ItemStack(Items.slime_ball, 1), new ItemStack(Items.dye, 1, 1), new ItemStack(Items.dye, 1, 11), new ItemStack(Items.glass_bottle),
+			"slimeball", "slimeball", "dyeRed", "dyeYellow", new ItemStack(Items.glass_bottle),
 		});
 		
 		addShapeless(new ItemStack(ITEMS.itemSunscreen, 1), new Object[] {
-			new ItemStack(Items.slime_ball, 1), new ItemStack(Items.slime_ball, 1), new ItemStack(Items.dye, 1, 14), new ItemStack(Items.glass_bottle),
+			"slimeball", "slimeball", "dyeOrange", "dyeOrange", new ItemStack(Items.glass_bottle),
+		});
+		
+		addShapeless(new ItemStack(ITEMS.itemSunscreen, 1), new Object[] {
+			"slimeball", "slimeball", "dyeWhite", "dyeWhite", new ItemStack(Items.glass_bottle),
 		});
 	}
 	

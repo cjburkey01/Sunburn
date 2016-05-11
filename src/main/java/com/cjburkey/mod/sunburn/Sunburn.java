@@ -18,7 +18,7 @@ import net.minecraft.potion.Potion;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 
-@Mod(name = "Sunburn", version = "1.7.10_1.0.1", modid = Sunburn.ID)
+@Mod(name = "Sunburn", version = "1.7.10_1.0.2", modid = Sunburn.ID)
 public class Sunburn {
 	
 	public static final String ID = "sunburn";
