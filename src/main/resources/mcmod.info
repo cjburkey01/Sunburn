@@ -1,0 +1,16 @@
+[
+{
+  "modid": "sunburn",
+  "name": "Sunburn",
+  "description": "Causes the player to catch on fire if they arere in the sun too long.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "http://cjburkey.com",
+  "updateUrl": "http://cjburkey.com",
+  "authorList": ["CJ Burkey"],
+  "credits": "The Forge and FML guys, for making forge.",
+  "logoFile": "logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
