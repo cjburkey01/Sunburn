@@ -1,5 +1,6 @@
 package com.cjburkey.mod.sunburn.client;
 
+import com.cjburkey.mod.sunburn.Sunburn;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
@@ -10,7 +11,9 @@ public class OverlayEvent {
 	
 	@SubscribeEvent
 	public void onRenderGUI(RenderGameOverlayEvent e) {
-		new OverlayGUI(Minecraft.getMinecraft(), time);
+		if(Sunburn.gui) {
+			new OverlayGUI(Minecraft.getMinecraft(), time);
+		}
 	}
 	
 }
