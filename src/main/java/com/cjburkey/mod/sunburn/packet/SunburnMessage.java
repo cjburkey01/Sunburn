@@ -1,6 +1,6 @@
 package com.cjburkey.mod.sunburn.packet;
 
-import com.cjburkey.mod.sunburn.client.OverlayEvent;
+import com.cjburkey.mod.sunburn.client.OverlayGUI;
 import cpw.mods.fml.common.network.ByteBufUtils;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
@@ -27,7 +27,7 @@ public class SunburnMessage implements IMessage {
 	
 	public static class Handler implements IMessageHandler<SunburnMessage, IMessage> {
 		public IMessage onMessage(SunburnMessage msg, MessageContext cont) {
-			OverlayEvent.time = Integer.parseInt(msg.time);
+			OverlayGUI.time = Integer.parseInt(msg.time);
 			return null;
 		}
 	}

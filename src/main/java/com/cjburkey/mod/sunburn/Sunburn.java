@@ -2,23 +2,24 @@ package com.cjburkey.mod.sunburn;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
-import com.cjburkey.mod.sunburn.client.OverlayEvent;
 import com.cjburkey.mod.sunburn.item.ITEMS;
 import com.cjburkey.mod.sunburn.packet.PacketDispatch;
 import com.cjburkey.mod.sunburn.potion.POTIONS;
+import com.cjburkey.mod.sunburn.proxy.CommonProxy;
 import com.cjburkey.mod.sunburn.recipe.RECIPES;
 import com.cjburkey.mod.sunburn.world.WorldTick;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.potion.Potion;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 
-@Mod(name = "Sunburn", version = "1.7.10_1.0.2", modid = Sunburn.ID)
+@Mod(name = "Sunburn", version = "1.7.10_1.0.3", modid = Sunburn.ID)
 public class Sunburn {
 	
 	public static final String ID = "sunburn";
@@ -27,6 +28,12 @@ public class Sunburn {
 	public static int secondsInSun;
 	public static int ticksPerSecond;
 	public static boolean gui;
+	
+	@SidedProxy(clientSide = "com.cjburkey.mod.sunburn.proxy.ClientProxy", serverSide = "com.cjburkey.mod.sunburn.proxy.CommonProxy")
+	public static CommonProxy proxy;
+	
+	@Instance(ID)
+	public static Sunburn instance;
 	
 	@EventHandler
 	public void preinit(FMLPreInitializationEvent e) {
@@ -41,7 +48,7 @@ public class Sunburn {
 	@EventHandler
 	public void init(FMLInitializationEvent e) {
 		FMLCommonHandler.instance().bus().register(new WorldTick());
-		MinecraftForge.EVENT_BUS.register(new OverlayEvent());
+		proxy.registerGuis();
 		
 		new RECIPES();
 	}
