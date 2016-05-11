@@ -7,6 +7,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
+import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 
 public class OverlayGUI extends Gui {
 	
@@ -20,9 +21,11 @@ public class OverlayGUI extends Gui {
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL)
 	public void onRenderGUI(RenderGameOverlayEvent.Post e) {
-		FontRenderer fr = mc.fontRenderer;
-		if(Sunburn.gui) {
-			this.drawString(fr, "Sunburn: " + ((int) ((float) time / (float) Sunburn.ticksPerSecond)) + " of " + Sunburn.secondsInSun, 5, 5, hexToInt("C42D2D"));
+		if(e.type == ElementType.TEXT) {
+			FontRenderer fr = mc.fontRenderer;
+			if(Sunburn.gui) {
+				this.drawString(fr, "Sunburn: " + ((int) ((float) time / (float) Sunburn.ticksPerSecond)) + " of " + Sunburn.secondsInSun, 5, 5, hexToInt("C42D2D"));
+			}
 		}
 	}
 	
