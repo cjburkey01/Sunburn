@@ -19,7 +19,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.potion.Potion;
 import net.minecraftforge.common.config.Configuration;
 
-@Mod(name = "Sunburn", version = "1.7.10_1.0.4", modid = Sunburn.ID)
+@Mod(name = "Sunburn", version = "1.7.10_1.0.5", modid = Sunburn.ID)
 public class Sunburn {
 	
 	public static final String ID = "sunburn";

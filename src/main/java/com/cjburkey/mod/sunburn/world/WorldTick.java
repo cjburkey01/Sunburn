@@ -18,7 +18,7 @@ public class WorldTick {
 			for(Object player : w.playerEntities) {
 				EntityPlayer p = (EntityPlayer) player;
 				NBTTagCompound data = p.getEntityData();
-				if(w.canBlockSeeTheSky((int) p.posX, (int) p.posY + 1, (int) p.posZ) && isDay(w) && p.getActivePotionEffect(POTIONS.potionSunscreen) == null) {
+				if(w.canBlockSeeTheSky((int) Math.floor(p.posX), (int) Math.floor(p.posY + 1), (int) Math.floor(p.posZ)) && isDay(w) && p.getActivePotionEffect(POTIONS.potionSunscreen) == null) {
 					data.setInteger(Sunburn.keyName, (data.hasKey(Sunburn.keyName)) ? data.getInteger(Sunburn.keyName) + 1 : 0);
 				} else {
 					data.setInteger(Sunburn.keyName, (data.hasKey(Sunburn.keyName) && data.getInteger(Sunburn.keyName) > 0) ? data.getInteger(Sunburn.keyName) - 1 : 0);

@@ -23,8 +23,8 @@ public class OverlayGUI extends Gui {
 	public void onRenderGUI(RenderGameOverlayEvent.Post e) {
 		if(e.type == ElementType.TEXT) {
 			FontRenderer fr = mc.fontRenderer;
-			if(Sunburn.gui) {
-				this.drawString(fr, "Sunburn: " + ((int) ((float) time / (float) Sunburn.ticksPerSecond)) + " of " + Sunburn.secondsInSun, 5, 5, hexToInt("C42D2D"));
+			if(Sunburn.gui && !mc.gameSettings.showDebugInfo) {
+				this.drawString(fr, "Sunburn: " + ((int) ((float) time / (float) Sunburn.ticksPerSecond)) + " of " + Sunburn.secondsInSun, 7, 7, hexToInt("C42D2D"));
 			}
 		}
 	}
